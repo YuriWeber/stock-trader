@@ -9,11 +9,19 @@
 export default {
     methods: {
         save() {
-            const { stocks, myStocks, balance } = this.$store.getters
-            this.$http.put("data.json", { stocks, myStocks, balance })
+            /**
+             * recebe todos os valores da store em constantes
+             * envia as constantes em um objeto para o banco de dados
+             */
+            const { stocks, MyStocks, balance } = this.$store.getters
+            this.$http.put("data.json", { stocks, MyStocks, balance })
             this.$emit("disable")
         },
         load() {
+            /**
+             * faz uma requisição ao banco de dados
+             * envia todas as informaçõespara serem adicionadas na store
+             */
             const data = this.$http.get("data.json")
                 .then(res => {
                     const data = res.data
@@ -34,7 +42,7 @@ export default {
     width: 168px;
     top: 0;
     right: 0;
-    margin-right: 146px;
+    margin-right: 154px;
     margin-top: 49px;
     box-shadow: 2px 3px 5px -1px black;
 }

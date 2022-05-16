@@ -1,15 +1,15 @@
 <template>
   <div class="portfolio">
-      <HaveStock v-for="stock in myStocks" v-if="stock.qty" :stock="stock"/>
+      <MyStock v-for="stock in myStocks" v-if="stock.qty" :stock="stock"/>
   </div>
 </template>
 
 <script>
-import HaveStock from '@/components/HaveStock.vue'
+import MyStock from '@/components/MyStock.vue'
 
 export default {
   components: {
-    HaveStock
+    MyStock
   },
   computed: {
     myStocks() {

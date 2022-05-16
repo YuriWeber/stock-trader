@@ -1,6 +1,9 @@
 <template>
   <div class="controller">
     <button @click="endDay">FINALIZAR O DIA</button>
+    <!-- 
+      Falta ajusto no css para não desalinhar
+    -->
     <button @click="menu = !menu" :class="{'menu-active': menu}">SALVAR & CARREGAR</button>
     <Menu v-if="menu" @disable="menu = false" />
     <span>SALDO: {{ balance | real }}</span>
